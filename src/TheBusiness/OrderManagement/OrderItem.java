@@ -78,4 +78,8 @@ public class OrderItem {
         return quantity;
     }
     
+    @Override
+    public String toString() {
+        return selectedproduct.toString();
+    }
 }

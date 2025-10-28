@@ -31,8 +31,8 @@ public class PricingMainFrame extends javax.swing.JFrame {
 
     public PricingMainFrame() {
         initComponents();
-        business = ConfigureABusiness.initialize();
-
+        //business = ConfigureABusiness.initialize();
+        business = ConfigureANewBusiness.initialize();
     }
 
     public void insert(JPanel jpanel) {

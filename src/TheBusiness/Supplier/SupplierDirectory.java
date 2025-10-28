@@ -29,8 +29,9 @@ public class SupplierDirectory {
             if(supplier.getName().equals(id)) return supplier;
         }
         return null;
-        }
-    public ArrayList<Supplier> getSuplierList(){
+    }
+    
+    public ArrayList<Supplier> getSupplierList(){
         return suppliers;
     }
     

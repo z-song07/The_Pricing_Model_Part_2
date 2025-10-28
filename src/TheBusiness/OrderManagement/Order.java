@@ -81,6 +81,16 @@ public class Order {
         else {return false;}
         
     }
+
+    public CustomerProfile getCustomer() {
+        return customer;
+    }
+
+    public SalesPersonProfile getSalesperson() {
+        return salesperson;
+    }
+    
+    
 public void CancelOrder(){
     status = "Cancelled";
 }

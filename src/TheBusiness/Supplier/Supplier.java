@@ -40,7 +40,8 @@ public class Supplier {
     public String getName(){
         return name;
     }
-        public ProductCatalog getProductCatalog(){
+    
+    public ProductCatalog getProductCatalog(){
         return productcatalog;
     }
     //add supplier product ..
