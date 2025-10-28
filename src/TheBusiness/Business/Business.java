@@ -16,6 +16,8 @@ import TheBusiness.Personnel.PersonDirectory;
 import TheBusiness.ProductManagement.ProductSummary;
 import TheBusiness.ProductManagement.ProductsReport;
 import TheBusiness.MarketModel.SolutionOfferCatalog;
+import TheBusiness.ProductManagement.Product;
+import TheBusiness.ProductManagement.ProductCatalog;
 import TheBusiness.SolutionOrders.MasterSolutionOrderList;
 import TheBusiness.SalesManagement.SalesPersonDirectory;
 import TheBusiness.Supplier.Supplier;
@@ -148,4 +150,19 @@ public class Business {
     //      return employeedirectory;
     //  }
 
+    
+    public ProductCatalog getMasterProductCatalog() {
+        ArrayList<Product> masterProductList = new ArrayList<Product>();
+        
+        // iterrate through each supplier to get all products
+        for (Supplier s: suppliers.getSupplierList()) {
+            ProductCatalog currentProductCatalog = s.getProductCatalog();
+            masterProductList.addAll(currentProductCatalog.getProductList());
+        }
+    
+        ProductCatalog masterProductCatalog = new ProductCatalog("MasterProductList", "All Product");
+        masterProductCatalog.setProducts(masterProductList);
+        return masterProductCatalog;
+    }
+    
 }

@@ -7,6 +7,7 @@ package TheBusiness.ProductManagement;
 
 import java.util.ArrayList;
 import TheBusiness.OrderManagement.OrderItem;
+import TheBusiness.Supplier.Supplier;
 
 /**
  *
@@ -18,15 +19,18 @@ public class Product {
     private int ceilingPrice;
     private int targetPrice;
     ArrayList<OrderItem> orderitems;
-        public Product( int fp, int cp, int tp) {
-
+    private String supplierName;
+    
+    public Product(String s, int fp, int cp, int tp) {
+        supplierName = s;
         floorPrice = fp;
         ceilingPrice = cp;
         targetPrice = tp;
         orderitems = new ArrayList();
         
     }
-    public Product(String n, int fp, int cp, int tp) {
+    public Product(String s, String n, int fp, int cp, int tp) {
+        supplierName =s;
         name = n;
         floorPrice = fp;
         ceilingPrice = cp;
@@ -88,10 +92,7 @@ public class Product {
     public void setName(String n){
         name = n;
     }
-    @Override
-    public String toString(){
-        return name;
-    }
+
     public int getFloorPrice(){
         return floorPrice;
     }
@@ -99,4 +100,12 @@ public class Product {
         return ceilingPrice;
     }
 
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    @Override
+    public String toString(){
+        return name;
+    }
 }

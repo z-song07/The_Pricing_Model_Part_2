@@ -20,8 +20,7 @@ public class Supplier {
    ProductsReport productsreport;
     public Supplier(String n){
         name = n;
-        productcatalog = new ProductCatalog("software");
-        
+        productcatalog = new ProductCatalog(name, "software"); // pass the supplier      
     }
     
     public ProductsReport prepareProductsReport(){

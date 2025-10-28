@@ -32,7 +32,9 @@ public class PricingMainFrame extends javax.swing.JFrame {
     public PricingMainFrame() {
         initComponents();
         //business = ConfigureABusiness.initialize();
-        business = ConfigureANewBusiness.initialize();
+        business = ConfigureMyOwnBusiness.initialize();
+        
+        setSize(800,700);
     }
 
     public void insert(JPanel jpanel) {

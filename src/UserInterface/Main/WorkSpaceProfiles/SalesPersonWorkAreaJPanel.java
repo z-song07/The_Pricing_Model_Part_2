@@ -15,6 +15,7 @@ import TheBusiness.CustomerManagement.CustomerProfile;
 import TheBusiness.SalesManagement.SalesPersonProfile;
 import UserInterface.Main.WorkSpaceProfiles.OrderManagement.ManageSalesPersonOrders;
 import UserInterface.Main.WorkSpaceProfiles.OrderManagement.ProcessOrder;
+import UserInterface.Reports.ReportViewJPanel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -57,7 +58,7 @@ public class SalesPersonWorkAreaJPanel extends javax.swing.JPanel {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        btnReports = new javax.swing.JButton();
         customerNameTextField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
@@ -119,17 +120,17 @@ public class SalesPersonWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton11.setBackground(new java.awt.Color(102, 153, 255));
-        jButton11.setFont(getFont());
-        jButton11.setForeground(new java.awt.Color(255, 255, 255));
-        jButton11.setText("Performance Reports");
-        jButton11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton11.setMaximumSize(new java.awt.Dimension(200, 40));
-        jButton11.setMinimumSize(new java.awt.Dimension(20, 20));
-        jButton11.setPreferredSize(new java.awt.Dimension(240, 25));
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        btnReports.setBackground(new java.awt.Color(102, 153, 255));
+        btnReports.setFont(getFont());
+        btnReports.setForeground(new java.awt.Color(255, 255, 255));
+        btnReports.setText("Performance Reports");
+        btnReports.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnReports.setMaximumSize(new java.awt.Dimension(200, 40));
+        btnReports.setMinimumSize(new java.awt.Dimension(20, 20));
+        btnReports.setPreferredSize(new java.awt.Dimension(240, 25));
+        btnReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                btnReportsActionPerformed(evt);
             }
         });
 
@@ -148,7 +149,7 @@ public class SalesPersonWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
                 .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(69, 69, 69)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -169,7 +170,7 @@ public class SalesPersonWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(221, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -223,22 +224,21 @@ public class SalesPersonWorkAreaJPanel extends javax.swing.JPanel {
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
 }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
         // TODO add your handling code here:
 
         CardSequencePanel.removeAll();
-//        ManageIncidents aos = new  ManageIncidents(businessunit, CardSequencePanel);
-        // aos.setAgenda(businessunit.getRiskManagementAgenda());
-//        CardSequencePanel.add("RiskAgendaObjectives", aos);
+        ReportViewJPanel rvjp = new ReportViewJPanel(business, CardSequencePanel);
+        CardSequencePanel.add(rvjp);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
-}//GEN-LAST:event_jButton11ActionPerformed
+}//GEN-LAST:event_btnReportsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReports;
     private javax.swing.JButton btnServeCustomer;
     private javax.swing.JTextField customerNameTextField;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;

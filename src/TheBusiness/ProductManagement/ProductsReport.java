@@ -6,7 +6,8 @@
 package TheBusiness.ProductManagement;
 
 import java.util.ArrayList;
-
+import java.util.Collections;
+import java.util.Comparator;
 /**
  *
  * @author kal bugrara
@@ -49,5 +50,14 @@ public class ProductsReport {
 
         return productsalwaysabovetarget;
     }
-
+   
+    public ArrayList<ProductSummary> getMostExpensiveProducts() {
+        // make a shallow copy
+        ArrayList<ProductSummary> sortByHighestPriceProductList = new ArrayList<>(productsummarylist);
+        // compare by price and sort
+        Comparator priceComparator = new SortByPrice();
+        Collections.sort(sortByHighestPriceProductList, priceComparator);
+        return sortByHighestPriceProductList;
+    }
 }
+

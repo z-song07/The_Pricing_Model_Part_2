@@ -33,7 +33,7 @@ import TheBusiness.UserAccountManagement.UserAccount;
 import TheBusiness.UserAccountManagement.UserAccountDirectory;
 
 
-public class ConfigureANewBusiness {
+public class ConfigureMyOwnBusiness {
    
     // random generator
     private static final Random RandomGenerator = new Random();
@@ -65,7 +65,7 @@ public class ConfigureANewBusiness {
 
                     int targetPrice = floorPrice + (int)((ceilingPrice - floorPrice) / 2);
                     Product newProduct = catalog.newProduct(productName, floorPrice, ceilingPrice, targetPrice);
-                    System.out.println("I am product #" + j);
+                    //System.out.println("I am product #" + j);
                 }
             }
         }
