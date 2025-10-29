@@ -5,6 +5,7 @@
  */
 package TheBusiness.OrderManagement;
 
+import TheBusiness.CustomerManagement.CustomerProfile;
 import TheBusiness.ProductManagement.Product;
 
 /**
@@ -15,12 +16,16 @@ public class OrderItem {
     Product selectedproduct;   
     int actualPrice;
     int quantity;
-
-    public OrderItem(Product p, int paidprice, int q) {
+    Order order;
+    CustomerProfile customer;
+    
+    public OrderItem(Product p, int paidprice, int q, Order o) {
         selectedproduct = p;
         p.addOrderItem(this); //make sure product links back to the item
         quantity = q;
         this.actualPrice = paidprice;
+        order = o;
+        customer = o.getCustomer();
     }
 
     public int getOrderItemTotal() {
@@ -77,6 +82,15 @@ public class OrderItem {
     public int getQuantity() {
         return quantity;
     }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public CustomerProfile getCustomer() {
+        return customer;
+    }
+    
     
     @Override
     public String toString() {

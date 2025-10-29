@@ -101,24 +101,24 @@ class ConfigureABusiness {
 // Process Orders on behalf of sales person and customer
         MasterOrderList masterorderlist = business.getMasterOrderList();
         Order order1 = masterorderlist.newOrder(customerprofile4, salespersonprofile);
-        OrderItem oi1 = order1.newOrderItem(products1p1, 18000, 1);
-        OrderItem oi2 = order1.newOrderItem(products1p2, 19500, 4);
-        OrderItem oi3 = order1.newOrderItem(products1p3, 36500, 10);
-        OrderItem oi4 = order1.newOrderItem(products1p4, 50000, 1);
-        OrderItem oi5 = order1.newOrderItem(products1p5, 25000, 3);
-        OrderItem oi6 = order1.newOrderItem(products1p6, 105000, 2);
-        OrderItem oi7 = order1.newOrderItem(products1p7, 36500, 3);
-        OrderItem oi8 = order1.newOrderItem(products1p8, 50000, 2);
+        OrderItem oi1 = order1.newOrderItem(products1p1, 18000, 1, order1);
+        OrderItem oi2 = order1.newOrderItem(products1p2, 19500, 4, order1);
+        OrderItem oi3 = order1.newOrderItem(products1p3, 36500, 10, order1);
+        OrderItem oi4 = order1.newOrderItem(products1p4, 50000, 1, order1);
+        OrderItem oi5 = order1.newOrderItem(products1p5, 25000, 3, order1);
+        OrderItem oi6 = order1.newOrderItem(products1p6, 105000, 2, order1);
+        OrderItem oi7 = order1.newOrderItem(products1p7, 36500, 3, order1);
+        OrderItem oi8 = order1.newOrderItem(products1p8, 50000, 2, order1);
 
         Order order12 = masterorderlist.newOrder(customerprofile4, salespersonprofile);
-        OrderItem oi112 = order1.newOrderItem(products1p1, 17000, 1);
-        OrderItem oi12 = order1.newOrderItem(products1p2, 9500, 4);
-        OrderItem oi13 = order1.newOrderItem(products1p3, 29500, 10);
-        OrderItem oi14 = order1.newOrderItem(products1p4, 30000, 1);
-        OrderItem oi15 = order1.newOrderItem(products1p5, 2000, 3);
-        OrderItem oi16 = order1.newOrderItem(products1p6, 95000, 2);
-        OrderItem oi17 = order1.newOrderItem(products1p7, 26500, 3);
-        OrderItem oi18 = order1.newOrderItem(products1p8, 40000, 2);
+        OrderItem oi112 = order1.newOrderItem(products1p1, 17000, 1, order12);
+        OrderItem oi12 = order1.newOrderItem(products1p2, 9500, 4, order12);
+        OrderItem oi13 = order1.newOrderItem(products1p3, 29500, 10, order12);
+        OrderItem oi14 = order1.newOrderItem(products1p4, 30000, 1, order12);
+        OrderItem oi15 = order1.newOrderItem(products1p5, 2000, 3, order12);
+        OrderItem oi16 = order1.newOrderItem(products1p6, 95000, 2, order12);
+        OrderItem oi17 = order1.newOrderItem(products1p7, 26500, 3, order12);
+        OrderItem oi18 = order1.newOrderItem(products1p8, 40000, 2, order12);
 
         return business;
 

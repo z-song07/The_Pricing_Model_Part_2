@@ -5,9 +5,12 @@
  */
 package TheBusiness.ProductManagement;
 
+import TheBusiness.CustomerManagement.CustomerProfile;
 import java.util.ArrayList;
 import TheBusiness.OrderManagement.OrderItem;
 import TheBusiness.Supplier.Supplier;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -20,13 +23,18 @@ public class Product {
     private int targetPrice;
     ArrayList<OrderItem> orderitems;
     private String supplierName;
+    //ArrayList<CustomerProfile> uniquecustomers;
+    Set<CustomerProfile> uniquecustomers;
     
     public Product(String s, int fp, int cp, int tp) {
         supplierName = s;
         floorPrice = fp;
         ceilingPrice = cp;
         targetPrice = tp;
-        orderitems = new ArrayList();
+        orderitems = new ArrayList<>();
+        
+        //uniquecustomers = new ArrayList<>();
+        uniquecustomers = new HashSet<>(); // only stores unique values
         
     }
     public Product(String s, String n, int fp, int cp, int tp) {
@@ -35,9 +43,13 @@ public class Product {
         floorPrice = fp;
         ceilingPrice = cp;
         targetPrice = tp;
-        orderitems = new ArrayList();
+        orderitems = new ArrayList<>();
+        //uniquecustomers = new ArrayList<>();
+        
+        uniquecustomers = new HashSet<>(); // only stores unique values
     }
-        public Product updateProduct(int fp, int cp, int tp) {
+    
+    public Product updateProduct(int fp, int cp, int tp) {
         floorPrice = fp;
         ceilingPrice = cp;
         targetPrice = tp;
@@ -89,6 +101,30 @@ public class Product {
         }
         return sum;
     }
+        
+        
+    // get a list of unique customers
+    // if the unique customers doesn't have the customer, add to the list
+//    public ArrayList<CustomerProfile> getUniqueCustomers() {
+//        for (OrderItem oi: orderitems) {
+//            CustomerProfile currentCustomer = oi.getCustomer();
+//            if(!uniquecustomers.contains(currentCustomer)) {
+//                uniquecustomers.add(currentCustomer);
+//            }
+//        }
+//        return uniquecustomers;
+//    }
+        
+    
+    // get a set of unique customers
+    public Set<CustomerProfile> getUniqueCustomers() {
+        for (OrderItem oi: orderitems) {
+            CustomerProfile currentCustomer = oi.getCustomer();
+            uniquecustomers.add(currentCustomer);
+        }
+        return uniquecustomers;
+    }
+    
     public void setName(String n){
         name = n;
     }

@@ -43,6 +43,8 @@ public class Supplier {
     public ProductCatalog getProductCatalog(){
         return productcatalog;
     }
+    
+
     //add supplier product ..
     
     //update supplier product ...

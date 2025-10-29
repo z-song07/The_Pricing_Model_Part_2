@@ -5,6 +5,9 @@
  */
 package TheBusiness.ProductManagement;
 
+import TheBusiness.CustomerManagement.CustomerProfile;
+import java.util.Set;
+
 /**
  *
  * @author kal bugrara
@@ -19,6 +22,7 @@ public class ProductSummary {
     int acutalsalesvolume;
     int rank; // will be done later
     int ceillingPrice;
+    
     
 
     public ProductSummary(Product p) {
@@ -58,6 +62,7 @@ public class ProductSummary {
     public Product getSubjectproduct() {
         return subjectproduct;
     }
+    
     
 
 }

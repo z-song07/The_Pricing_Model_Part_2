@@ -122,17 +122,12 @@ public class ConfigureMyOwnBusiness {
                     int randomActualPrice = RandomGenerator.nextInt(selectedProduct.getFloorPrice(), selectedProduct.getCeilingPrice()+ 1); 
                     int randomQuantity = RandomGenerator.nextInt(1, 6); // 1-5 quantities
                  
-                    OrderItem newOrderItem = newOrder.newOrderItem(selectedProduct, randomActualPrice, randomQuantity);
+                    OrderItem newOrderItem = newOrder.newOrderItem(selectedProduct, randomActualPrice, randomQuantity, newOrder);
                     
                     
                 }
-                
-                // add the order to the customer's own order list
-                newCustomer.addCustomerOrder(newOrder);
             }
         
-            System.out.println("I am " + newCustomer + ". I bought :");
-            System.out.println(newCustomer.getOrders().get(0).getOrderTotal());
         }
         
         // Create User accounts that link to specific profiles

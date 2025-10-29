@@ -433,7 +433,7 @@ public class ProcessOrder extends javax.swing.JPanel {
         selectedproduct = (Product) SupplierCatalogTable.getValueAt(selectedrow, 0);
         if (selectedproduct == null) return;
         
-        OrderItem item = currentOrder.newOrderItem(selectedproduct, 1000, 1);
+        OrderItem item = currentOrder.newOrderItem(selectedproduct, 1000, 1, currentOrder);
             Object[] row = new Object[5];
 
             row[0] = String.valueOf(item.getSelectedProduct());

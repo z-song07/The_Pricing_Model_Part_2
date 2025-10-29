@@ -59,5 +59,13 @@ public class ProductsReport {
         Collections.sort(sortByHighestPriceProductList, priceComparator);
         return sortByHighestPriceProductList;
     }
+    
+    public int getTotalSales() {
+        int sum = 0;
+        for (ProductSummary ps: productsummarylist) {
+            sum = sum + ps.getProductPricePerformance();
+        }
+        return sum;
+    }
 }
 

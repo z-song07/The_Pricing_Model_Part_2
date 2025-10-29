@@ -39,8 +39,8 @@ public class Order {
         customer.addCustomerOrder(this); //we link the order to the customer
         salesperson.addSalesOrder(this);  
     }
-    public OrderItem newOrderItem(Product p, int actualprice, int q) {
-        OrderItem oi = new OrderItem(p, actualprice, q);
+    public OrderItem newOrderItem(Product p, int actualprice, int q, Order o) {
+        OrderItem oi = new OrderItem(p, actualprice, q, this);
         orderitems.add(oi);
         return oi;
     }
