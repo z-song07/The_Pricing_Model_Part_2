@@ -5,7 +5,12 @@
 package UserInterface.Reports;
 
 import TheBusiness.Business.Business;
+import TheBusiness.CustomerManagement.CustomerDirectory;
+import TheBusiness.CustomerManagement.CustomerSummary;
+import TheBusiness.CustomerManagement.CustomersReport;
+import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,6 +28,8 @@ public class CustomersReportJPanel extends javax.swing.JPanel {
         initComponents();
         b = business;
         csp = panel;
+        
+        populateTable();
     }
 
     /**
@@ -46,17 +53,17 @@ public class CustomersReportJPanel extends javax.swing.JPanel {
 
         tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Name", "Total Sales"
+                "Rank", "Name", "Total Sales"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -70,13 +77,11 @@ public class CustomersReportJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
-                .addGap(239, 239, 239))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,4 +100,32 @@ public class CustomersReportJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblCustomers;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        // drop the previous rows
+        DefaultTableModel model = (DefaultTableModel) tblCustomers.getModel();
+        model.setRowCount(0);
+        
+        // get the customer directory
+        CustomerDirectory customerDirectory = b.getCustomerDirectory();
+        // generate customers report
+        CustomersReport customersReport = customerDirectory.generatCustomerPerformanceReport();
+        // get the list of customers summary
+        ArrayList<CustomerSummary> sortedCustomerSummaryList = customersReport.sortCustomerByHighestTotalValue();
+        // iterate through each customer summary
+        
+        int rank = 1;
+        for (CustomerSummary cs: sortedCustomerSummaryList) {
+            Object[] row = new Object[3];
+            
+            row[0] = rank;
+            row[1] = cs.getCustomer();
+            row[2] = cs.getOrdertotal();
+            
+            // add the row
+            model.addRow(row);
+            rank++;
+        }
+              
+    }
 }

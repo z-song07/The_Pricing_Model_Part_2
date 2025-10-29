@@ -52,10 +52,10 @@ public class ProductsReport {
     }
    
     public ArrayList<ProductSummary> getMostExpensiveProducts() {
-        // make a shallow copy
+        // make a copy
         ArrayList<ProductSummary> sortByHighestPriceProductList = new ArrayList<>(productsummarylist);
         // compare by price and sort
-        Comparator priceComparator = new SortByPrice();
+        Comparator priceComparator = new CompareLargerPrice();
         Collections.sort(sortByHighestPriceProductList, priceComparator);
         return sortByHighestPriceProductList;
     }

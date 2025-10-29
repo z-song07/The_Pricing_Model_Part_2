@@ -6,18 +6,37 @@
 package TheBusiness.CustomerManagement;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
  * @author kal bugrara
  */
 public class CustomersReport {
-    ArrayList<CustomerSummary> customerlist;
+    ArrayList<CustomerSummary> customersummarylist;
     
     public CustomersReport(){
+        customersummarylist = new ArrayList<CustomerSummary>();
         
     }
+    
     public void addCustomerSummary(CustomerSummary cs){
-        
+        customersummarylist.add(cs);
     }
+    
+    // sort customer summarys by the total order value
+    public ArrayList<CustomerSummary> sortCustomerByHighestTotalValue() {
+        ArrayList<CustomerSummary> sortedCustomerSummaryList = new ArrayList<> (customersummarylist);
+        
+        Comparator sortByLargerOrderValue = new CompareLargerTotalValue();
+        Collections.sort(sortedCustomerSummaryList, sortByLargerOrderValue);
+        return sortedCustomerSummaryList;
+    }
+
+    public ArrayList<CustomerSummary> getCustomersummarylist() {
+        return customersummarylist;
+    }
+    
+    
 }

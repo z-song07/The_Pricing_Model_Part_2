@@ -14,8 +14,18 @@ import TheBusiness.OrderManagement.Order;
 public class CustomerSummary {
     CustomerProfile customer;
     int ordertotal;
+    
     public CustomerSummary(CustomerProfile cp){
-        
+        customer = cp;
+        ordertotal = cp.getTotalPricePerformance();
+    }
+
+    public int getOrdertotal() {
+        return ordertotal;
+    }
+
+    public CustomerProfile getCustomer() {
+        return customer;
     }
     
     

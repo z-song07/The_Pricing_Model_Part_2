@@ -11,10 +11,8 @@ import java.util.Comparator;
  * @author csong
  */
 
-public class SortByPrice implements Comparator<ProductSummary> {
+public class CompareLargerPrice implements Comparator<ProductSummary> {
         public int compare(ProductSummary p1, ProductSummary p2) {
-            ProductSummary a = p1;
-            ProductSummary b = p2;
 //            if (p1.getCeillingPrice() > p2.getCeillingPrice()) {
 //                return -1; // the 1st is larger so it goes first
 //            }

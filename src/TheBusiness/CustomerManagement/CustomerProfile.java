@@ -40,7 +40,11 @@ public class CustomerProfile extends Profile {
 
         //for each order in the customer orderlist 
         //calculate order price performance and add it to the sum
-        return 0;
+        int sum = 0;
+        for (Order o: orders) {
+            sum = sum + o.getOrderTotal();
+        }
+        return sum;
     }
 
     public int getNumberOfOrdersAboveTotalTarget() {
@@ -75,10 +79,10 @@ public class CustomerProfile extends Profile {
         orders.add(o);
     }
 
-    @Override
-    public String toString() {
-        return person.getPersonId();
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
+
 
     public String getCustomerId() {
         return person.getPersonId();
@@ -88,4 +92,8 @@ public class CustomerProfile extends Profile {
         return person;
     }
 
+    @Override
+    public String toString() {
+        return person.getPersonId();
+    }
 }
