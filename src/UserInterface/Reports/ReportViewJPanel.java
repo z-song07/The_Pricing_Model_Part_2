@@ -115,10 +115,10 @@ public class ReportViewJPanel extends javax.swing.JPanel {
     private void btnMostValuableCustomerIdentifyResourceAssetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostValuableCustomerIdentifyResourceAssetsActionPerformed
 
         // TODO add your handling code here:
-//        ProductReportJPanel prjp = new ProductReportJPanel(business, csp);
-//
-//        csp.add("View", prjp);
-//        ((java.awt.CardLayout) csp.getLayout()).next(csp);
+        CustomersReportJPanel crjp = new CustomersReportJPanel(business, csp);
+
+        csp.add("View", crjp);
+        ((java.awt.CardLayout) csp.getLayout()).next(csp);
     }//GEN-LAST:event_btnMostValuableCustomerIdentifyResourceAssetsActionPerformed
 
     private void btnSupplierReportIdentifyResourceAssetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplierReportIdentifyResourceAssetsActionPerformed

@@ -4,6 +4,9 @@
  */
 package UserInterface.Reports;
 
+import TheBusiness.Business.Business;
+import javax.swing.JPanel;
+
 /**
  *
  * @author csong
@@ -13,8 +16,13 @@ public class CustomersReportJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CustomersReportJPanel
      */
-    public CustomersReportJPanel() {
+    Business b;
+    JPanel csp;
+    
+    public CustomersReportJPanel(Business business, JPanel panel) {
         initComponents();
+        b = business;
+        csp = panel;
     }
 
     /**
