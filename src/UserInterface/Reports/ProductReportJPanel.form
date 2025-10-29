@@ -21,15 +21,13 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
-              <Component id="lblTitle" pref="429" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="746" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="2" attributes="0">
+                  <Component id="lblTitle" alignment="2" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="2" pref="657" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="107" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -40,7 +38,7 @@
               <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="68" max="32767" attributes="0"/>
+              <EmptySpace pref="76" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,7 +63,8 @@
         <Component class="javax.swing.JTable" name="tblProduct">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="5" rowCount="4">
+              <Table columnCount="6" rowCount="4">
+                <Column editable="false" title="Rank" type="java.lang.Object"/>
                 <Column editable="false" title="Product" type="java.lang.Object"/>
                 <Column editable="false" title="Supplier" type="java.lang.Object"/>
                 <Column editable="false" title="Ceiling Price" type="java.lang.Object"/>
@@ -75,6 +74,11 @@
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
+                <Column maxWidth="80" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>

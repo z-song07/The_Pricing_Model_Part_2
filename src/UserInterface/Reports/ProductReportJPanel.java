@@ -53,17 +53,17 @@ public class ProductReportJPanel extends javax.swing.JPanel {
 
         tblProduct.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Product", "Supplier", "Ceiling Price", "Floor Price", "Target Price"
+                "Rank", "Product", "Supplier", "Ceiling Price", "Floor Price", "Target Price"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -71,19 +71,20 @@ public class ProductReportJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(tblProduct);
+        if (tblProduct.getColumnModel().getColumnCount() > 0) {
+            tblProduct.getColumnModel().getColumn(0).setMaxWidth(80);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(196, 196, 196)
-                .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
-                .addGap(208, 208, 208))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 746, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,7 +93,7 @@ public class ProductReportJPanel extends javax.swing.JPanel {
                 .addComponent(lblTitle)
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -112,18 +113,22 @@ public class ProductReportJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         System.out.println(masterProductCatalog.getProductList());
+        
+        int rank = 1;
         for (ProductSummary ps: sortedProductSummaryList) {
             Product currentProduct = ps.getSubjectproduct();
             
-            Object[] row = new Object[5];
-            row[0] = currentProduct;
-            row[1] = currentProduct.getSupplierName();
-            row[2] = currentProduct.getCeilingPrice();
-            row[3] = currentProduct.getFloorPrice();
-            row[4] = currentProduct.getTargetPrice();
+            Object[] row = new Object[6];
+            row[0] = rank;
+            row[1] = currentProduct;
+            row[2] = currentProduct.getSupplierName();
+            row[3] = currentProduct.getCeilingPrice();
+            row[4] = currentProduct.getFloorPrice();
+            row[5] = currentProduct.getTargetPrice();
             
             // add the row
             model.addRow(row);
+            rank++;
         }  
     }
 }
