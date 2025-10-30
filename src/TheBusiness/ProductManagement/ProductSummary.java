@@ -19,7 +19,7 @@ public class ProductSummary {
     int numberofsalesabovetarget;
     int numberofsalesbelowtarget;
     int productpriceperformance; //total profit above target --could be negative too
-    int acutalsalesvolume;
+    int actualsalesvolume;
     int rank; // will be done later
     int ceillingPrice;
     
@@ -30,13 +30,13 @@ public class ProductSummary {
         subjectproduct = p; //keeps track of the product itself not as well;
         numberofsalesabovetarget = p.getNumberOfProductSalesAboveTarget();
         productpriceperformance = p.getOrderPricePerformance();
-        acutalsalesvolume = p.getSalesVolume();
+        actualsalesvolume = p.getSalesVolume();
         numberofsalesbelowtarget = p.getNumberOfProductSalesBelowTarget();
         ceillingPrice = p.getCeilingPrice();
     }
 
     public int getSalesRevenues() {
-        return acutalsalesvolume;
+        return actualsalesvolume;
     }
 
     public int getNumberAboveTarget() {

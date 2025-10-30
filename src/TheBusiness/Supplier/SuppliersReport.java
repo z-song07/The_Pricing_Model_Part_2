@@ -24,5 +24,4 @@ public class SuppliersReport {
         return suppliersummarylist;
     }
     
-    
 }

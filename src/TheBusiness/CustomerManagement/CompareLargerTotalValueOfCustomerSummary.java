@@ -10,7 +10,7 @@ import java.util.Comparator;
  *
  * @author csong
  */
-public class CompareLargerTotalValue implements Comparator<CustomerSummary>{
+public class CompareLargerTotalValueOfCustomerSummary implements Comparator<CustomerSummary>{
     
     public int compare(CustomerSummary cs1, CustomerSummary cs2) {
         // compare the total price

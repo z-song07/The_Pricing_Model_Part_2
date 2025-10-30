@@ -63,7 +63,7 @@ public class ProductsReport {
     public int getTotalSales() {
         int sum = 0;
         for (ProductSummary ps: productsummarylist) {
-            sum = sum + ps.getProductPricePerformance();
+            sum = sum + ps.getSalesRevenues();
         }
         return sum;
     }

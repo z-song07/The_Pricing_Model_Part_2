@@ -29,7 +29,7 @@ public class CustomersReport {
     public ArrayList<CustomerSummary> sortCustomerByHighestTotalValue() {
         ArrayList<CustomerSummary> sortedCustomerSummaryList = new ArrayList<> (customersummarylist);
         
-        Comparator sortByLargerOrderValue = new CompareLargerTotalValue();
+        Comparator sortByLargerOrderValue = new CompareLargerTotalValueOfCustomerSummary();
         Collections.sort(sortedCustomerSummaryList, sortByLargerOrderValue);
         return sortedCustomerSummaryList;
     }

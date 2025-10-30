@@ -117,19 +117,22 @@ public class ReportViewJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         CustomersReportJPanel crjp = new CustomersReportJPanel(business, csp);
 
-        csp.add("View", crjp);
+        csp.add("CustomersReportJPanel", crjp);
         ((java.awt.CardLayout) csp.getLayout()).next(csp);
     }//GEN-LAST:event_btnMostValuableCustomerIdentifyResourceAssetsActionPerformed
 
     private void btnSupplierReportIdentifyResourceAssetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplierReportIdentifyResourceAssetsActionPerformed
-        // TODO add your handling code here:
+        SuppliersReportJPanel srjp = new SuppliersReportJPanel(business, csp);
+        csp.add("SuppliersReportJPanel", srjp);
+        ((java.awt.CardLayout) csp.getLayout()).next(csp);
+        
     }//GEN-LAST:event_btnSupplierReportIdentifyResourceAssetsActionPerformed
 
     private void btnMostExpensiveProductIdentifyResourceAssetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostExpensiveProductIdentifyResourceAssetsActionPerformed
         // TODO add your handling code here:
-        ProductReportJPanel prjp = new ProductReportJPanel(business, csp);
+        ProductsReportJPanel prjp = new ProductsReportJPanel(business, csp);
 
-        csp.add("ViewMostExpensiveProducts", prjp);
+        csp.add("ProductsReportJPanel", prjp);
         ((java.awt.CardLayout) csp.getLayout()).next(csp);
     }//GEN-LAST:event_btnMostExpensiveProductIdentifyResourceAssetsActionPerformed
 

@@ -87,21 +87,23 @@ public class Product {
     // is $500 above the expected target. If the actual is $1800 then the lose will be $200
     // Add all these difference to get the total including wins and loses
     
-        public int getOrderPricePerformance() {
+    public int getOrderPricePerformance() {
         int sum = 0;
         for (OrderItem oi : orderitems) {
             sum = sum + oi.calculatePricePerformance();     //positive and negative values       
         }
         return sum;
     }
-        public int getSalesVolume() {
+    
+    public int getSalesVolume() {
         int sum = 0;
         for (OrderItem oi : orderitems) {
-            sum = sum + oi.getOrderItemTotal();     //positive and negative values       
+            sum = sum + oi.getOrderItemTotal();     //positive values       
         }
         return sum;
     }
-        
+
+    
         
     // get a list of unique customers
     // if the unique customers doesn't have the customer, add to the list

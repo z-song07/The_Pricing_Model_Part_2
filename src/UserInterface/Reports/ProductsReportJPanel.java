@@ -17,14 +17,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author csong
  */
-public class ProductReportJPanel extends javax.swing.JPanel {
+public class ProductsReportJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ProductReportJPanel
      */
     Business b;
     JPanel csp;
-    public ProductReportJPanel(Business business, JPanel csp) {
+    public ProductsReportJPanel(Business business, JPanel csp) {
         initComponents();
         this.b = business;
         this.csp = csp;
@@ -111,8 +111,6 @@ public class ProductReportJPanel extends javax.swing.JPanel {
         
         DefaultTableModel model = (DefaultTableModel) tblProduct.getModel();
         model.setRowCount(0);
-        
-        System.out.println(masterProductCatalog.getProductList());
         
         int rank = 1;
         for (ProductSummary ps: sortedProductSummaryList) {
