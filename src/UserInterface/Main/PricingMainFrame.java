@@ -35,6 +35,8 @@ public class PricingMainFrame extends javax.swing.JFrame {
         business = ConfigureMyOwnBusiness.initialize();
         
         setSize(1200,700);
+        btnLogout.setVisible(false);
+        
     }
 
     public void insert(JPanel jpanel) {
@@ -52,11 +54,12 @@ public class PricingMainFrame extends javax.swing.JFrame {
 
         SplitHomeArea = new javax.swing.JSplitPane();
         actionsidejpanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        UserNameTextField = new javax.swing.JTextField();
-        PasswordTextField = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        btnLogin = new javax.swing.JButton();
+        lblUsername = new javax.swing.JLabel();
+        fieldUsername = new javax.swing.JTextField();
+        fieldPassword = new javax.swing.JTextField();
+        lblPassword = new javax.swing.JLabel();
+        btnLogout = new javax.swing.JButton();
         CardSequencePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,25 +67,33 @@ public class PricingMainFrame extends javax.swing.JFrame {
         actionsidejpanel.setBackground(new java.awt.Color(0, 153, 153));
         actionsidejpanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginButtonActionPerformed(evt);
             }
         });
-        actionsidejpanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 70, 30));
+        actionsidejpanel.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 70, 30));
 
-        jLabel1.setText("User Name");
-        actionsidejpanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        lblUsername.setText("User Name");
+        actionsidejpanel.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        UserNameTextField.setText("sales");
-        actionsidejpanel.add(UserNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 130, -1));
+        fieldUsername.setText("sales");
+        actionsidejpanel.add(fieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 130, -1));
 
-        PasswordTextField.setText("XXXX");
-        actionsidejpanel.add(PasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 130, -1));
+        fieldPassword.setText("XXXX");
+        actionsidejpanel.add(fieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 130, -1));
 
-        jLabel2.setText("Password");
-        actionsidejpanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
+        lblPassword.setText("Password");
+        actionsidejpanel.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
+
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+        actionsidejpanel.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 353, -1, 30));
 
         SplitHomeArea.setLeftComponent(actionsidejpanel);
 
@@ -98,8 +109,8 @@ public class PricingMainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         //      WorkAreaJPanel ura = new WorkAreaJPanel(workareajpanl);
 
-        String un = UserNameTextField.getText();
-        String pw = PasswordTextField.getText();
+        String un = fieldUsername.getText();
+        String pw = fieldPassword.getText();
 
         UserAccountDirectory uad = business.getUserAccountDirectory();
         UserAccount useraccount = uad.AuthenticateUser(un, pw);
@@ -140,7 +151,24 @@ public class PricingMainFrame extends javax.swing.JFrame {
 
         }
 
+        btnLogin.setVisible(false);;
+        fieldUsername.setVisible(false);
+        fieldPassword.setVisible(false);
+        lblUsername.setVisible(false);
+        lblPassword.setVisible(false);
+        btnLogout.setVisible(true);
     }//GEN-LAST:event_LoginButtonActionPerformed
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        btnLogout.setVisible(false);
+        btnLogin.setVisible(true);;
+        fieldUsername.setVisible(true);
+        fieldPassword.setVisible(true);
+        lblUsername.setVisible(true);
+        lblPassword.setVisible(true);
+        CardSequencePanel.removeAll();
+        
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,12 +207,13 @@ public class PricingMainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardSequencePanel;
-    private javax.swing.JTextField PasswordTextField;
     private javax.swing.JSplitPane SplitHomeArea;
-    private javax.swing.JTextField UserNameTextField;
     private javax.swing.JPanel actionsidejpanel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JTextField fieldPassword;
+    private javax.swing.JTextField fieldUsername;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblUsername;
     // End of variables declaration//GEN-END:variables
 }

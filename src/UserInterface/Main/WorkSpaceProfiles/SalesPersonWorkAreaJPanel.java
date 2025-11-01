@@ -183,8 +183,8 @@ public class SalesPersonWorkAreaJPanel extends javax.swing.JPanel {
         String customername = customerNameTextField.getText();
         CustomerProfile selectedcustomer = business.getCustomerDirectory().findCustomer(customername);
         if (customername.isEmpty() || selectedcustomer == null) {
-            JOptionPane.showMessageDialog(this,"Please put 'Customer' follow by number from 1 to 300 (ex. Customer1)", "Warning", JOptionPane.WARNING_MESSAGE);
-        
+            JOptionPane.showMessageDialog(this,"Please put 'Customer ' follow by number from 1 to 300 (ex. Customer 1)", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
         }
         ProcessOrder aos = new ProcessOrder(business, selectedcustomer ,salesperson, CardSequencePanel);
 

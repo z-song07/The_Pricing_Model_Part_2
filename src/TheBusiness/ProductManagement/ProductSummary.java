@@ -22,7 +22,7 @@ public class ProductSummary {
     int actualsalesvolume;
     int rank; // will be done later
     int ceillingPrice;
-    
+    int targetprice;
     
 
     public ProductSummary(Product p) {
@@ -33,6 +33,7 @@ public class ProductSummary {
         actualsalesvolume = p.getSalesVolume();
         numberofsalesbelowtarget = p.getNumberOfProductSalesBelowTarget();
         ceillingPrice = p.getCeilingPrice();
+        targetprice = p.getTargetPrice();
     }
 
     public int getSalesRevenues() {
@@ -61,6 +62,10 @@ public class ProductSummary {
 
     public Product getSubjectproduct() {
         return subjectproduct;
+    }
+
+    public int getTargetprice() {
+        return targetprice;
     }
     
     
