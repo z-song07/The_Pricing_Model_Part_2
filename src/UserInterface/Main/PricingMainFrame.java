@@ -34,7 +34,7 @@ public class PricingMainFrame extends javax.swing.JFrame {
         //business = ConfigureABusiness.initialize();
         business = ConfigureMyOwnBusiness.initialize();
         
-        setSize(1200,700);
+        setSize(1100,700);
         btnLogout.setVisible(false);
         
     }
@@ -167,6 +167,8 @@ public class PricingMainFrame extends javax.swing.JFrame {
         lblUsername.setVisible(true);
         lblPassword.setVisible(true);
         CardSequencePanel.removeAll();
+        CardSequencePanel.repaint();
+        CardSequencePanel.revalidate();
         
     }//GEN-LAST:event_btnLogoutActionPerformed
 

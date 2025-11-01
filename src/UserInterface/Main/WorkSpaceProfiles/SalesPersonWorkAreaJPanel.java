@@ -200,34 +200,32 @@ public class SalesPersonWorkAreaJPanel extends javax.swing.JPanel {
 //        ManageVulns aos = new  ManageVulns(businessunit, CardSequencePanel);
         // aos.setAgenda(businessunit.getRiskManagementAgenda());
 //        CardSequencePanel.add("ManageVulns", aos);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+        //((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
 
 }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-
-        ManageSalesPersonOrders iet = new ManageSalesPersonOrders(business, CardSequencePanel);
-
-        CardSequencePanel.add("FindResourceAsset", iet);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+//
+//        ManageSalesPersonOrders iet = new ManageSalesPersonOrders(business, CardSequencePanel);
+//
+//        CardSequencePanel.add("FindResourceAsset", iet);
+//        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
 
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-
-        CardSequencePanel.removeAll();
-        //      ViewBusinessUnitRiskProfile drpd= new ViewBusinessUnitRiskProfile(businessunit, CardSequencePanel);
-//        ManageHazards drpd = new ManageHazards(businessunit, CardSequencePanel);
-//        CardSequencePanel.add("ManageRiskProfiles", drpd);
-        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
+//
+//        CardSequencePanel.removeAll();
+//        //      ViewBusinessUnitRiskProfile drpd= new ViewBusinessUnitRiskProfile(businessunit, CardSequencePanel);
+////        ManageHazards drpd = new ManageHazards(businessunit, CardSequencePanel);
+////        CardSequencePanel.add("ManageRiskProfiles", drpd);
+//        ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
 }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
         // TODO add your handling code here:
-
-        CardSequencePanel.removeAll();
         ReportViewJPanel rvjp = new ReportViewJPanel(business, salesperson, CardSequencePanel);
         CardSequencePanel.add(rvjp);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);

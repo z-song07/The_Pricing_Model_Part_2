@@ -93,8 +93,8 @@ public class CustomersReportJPanel extends javax.swing.JPanel {
                         .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 829, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(257, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,7 +111,7 @@ public class CustomersReportJPanel extends javax.swing.JPanel {
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
          csp.remove(this);
-        ((java.awt.CardLayout) csp.getLayout()).next(csp);
+        ((java.awt.CardLayout) csp.getLayout()).previous(csp);
     }//GEN-LAST:event_BackActionPerformed
 
 

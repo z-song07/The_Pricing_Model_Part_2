@@ -158,7 +158,7 @@ public class ReportViewJPanel extends javax.swing.JPanel {
 
     private void Back1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back1ActionPerformed
         csp.remove(this);
-        ((java.awt.CardLayout) csp.getLayout()).next(csp);
+        ((java.awt.CardLayout) csp.getLayout()).previous(csp);
     }//GEN-LAST:event_Back1ActionPerformed
 
 

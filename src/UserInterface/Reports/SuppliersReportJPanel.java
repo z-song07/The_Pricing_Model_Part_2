@@ -89,7 +89,7 @@ public class SuppliersReportJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -98,7 +98,7 @@ public class SuppliersReportJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(Back1)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +115,7 @@ public class SuppliersReportJPanel extends javax.swing.JPanel {
 
     private void Back1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back1ActionPerformed
         csp.remove(this);
-        ((java.awt.CardLayout) csp.getLayout()).next(csp);
+        ((java.awt.CardLayout) csp.getLayout()).previous(csp);
     }//GEN-LAST:event_Back1ActionPerformed
 
     private void populateTable() {
@@ -142,7 +142,6 @@ public class SuppliersReportJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Back;
     private javax.swing.JButton Back1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitle;
