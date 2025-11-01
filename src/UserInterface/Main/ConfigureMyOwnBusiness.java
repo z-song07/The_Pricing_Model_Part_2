@@ -48,13 +48,15 @@ public class ConfigureMyOwnBusiness {
         
         // generate 50 random suppliers
         ArrayList<Boolean> RandomSupplierPicker = randomUniquePicksGenerator(30, 50); 
-        //System.out.println(RandomSupplierPicker.toString());
+        
+        // number starts with 1 for naming
         for (int i = 1; i <= 50; i++) {
             Supplier supplier = supplierdirectory.newSupplier("Supplier " + i);
             ProductCatalog catalog = supplier.getProductCatalog();
 
             // generate 50 products for 30 selected suppliers
             // check if the supplier is getting chosen to add product
+            // index starts with 0, sp use i - 1
             if (RandomSupplierPicker.get(i - 1)) {
                 for (int j = 1; j <= 50; j++) {
                     String productName = "Product " + i + "-" + j;
@@ -79,6 +81,7 @@ public class ConfigureMyOwnBusiness {
 
         // get salesperson directory size
         int salespersonDirectorySize = salesPersonDirectory.getSalespersonlist().size();
+        // line 97-99 was to assign random sales person to the order, but the sales person won't get the full picture for all customers
         // to make it easier to view all customers, I will assign them to one salesperson
         SalesPersonProfile selectedSalesPerson = salesPersonDirectory.getSalespersonlist().get(0);
         
@@ -96,14 +99,13 @@ public class ConfigureMyOwnBusiness {
                 // SalesPersonProfile selectedSalesPerson = salesPersonDirectory.getSalespersonlist().get(salesPersonIndex);
                 
                 // create order
-                //Order newOrder = masterOrderList.newOrder(newCustomer, selectedSalesPerson);
                 Order newOrder = masterOrderList.newOrder(newCustomer, selectedSalesPerson);
                 
                 //add up to 10 order items
                 int numOrderItemIndexBound = RandomGenerator.nextInt(10);
                 for (int k = 0; k <= numOrderIndexBound; k++) {
                     // there are 50 suppliers
-                    // need to re-select if suppliers product list is empty
+                    // need to re-select if suppliers product list is empty (since only 30 out of 50 supppliers have products)
                     int productCatalogLength = 0;
                     Supplier selectedSupplier;
                     do {
@@ -140,6 +142,7 @@ public class ConfigureMyOwnBusiness {
     
     // choosing pickNum of elements out of totalNum of elements
     // pickNum is number of elements getting choose, totalNum is the total number of elements
+    // this generates an array list of totalNum size, with pickNum of true, and (totalNum - pickNum) of false
     static ArrayList<Boolean> randomUniquePicksGenerator(int pickNum, int totalNum) {
         int excludedNum = totalNum - pickNum; // excludedNum is number of element excluded
         ArrayList<Boolean> randomPicks = new ArrayList<Boolean>();

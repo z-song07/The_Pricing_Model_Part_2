@@ -228,7 +228,7 @@ public class SalesPersonWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         CardSequencePanel.removeAll();
-        ReportViewJPanel rvjp = new ReportViewJPanel(business, CardSequencePanel);
+        ReportViewJPanel rvjp = new ReportViewJPanel(business, salesperson, CardSequencePanel);
         CardSequencePanel.add(rvjp);
         ((java.awt.CardLayout) CardSequencePanel.getLayout()).next(CardSequencePanel);
 }//GEN-LAST:event_btnReportsActionPerformed

@@ -21,14 +21,14 @@ public class SupplierSummary {
     Supplier supplier;
     ProductCatalog productCatalog;
     Set<CustomerProfile> uniqueCustomers;
-    double totalsales;
+    int totalsales;
     public SupplierSummary(Supplier s) {
         supplier = s;
         productCatalog = s.getProductCatalog();
         totalsales = productCatalog.generatProductPerformanceReport().getTotalSales();
     }
     
-    public double getSupplierTotalSales() {
+    public int getSupplierTotalSales() {
        return totalsales;
     }
     
@@ -40,8 +40,9 @@ public class SupplierSummary {
     // in percentage
     public double getLoyaltyScore(int totalCustomers) {
         double customersForThisSupplier = this.getNumberOfUniqueCustomers();
-        double loyaltyScore = customersForThisSupplier / totalCustomers * 100;
+        double loyaltyScore = customersForThisSupplier / (double) totalCustomers * 100; // in percentage
         
+        //round
         double roundedScore = Math.round(loyaltyScore * 100.0) /100.0;
         return roundedScore;
     }
@@ -56,9 +57,9 @@ public class SupplierSummary {
         
         // handles uniqueCustomers cannot be zero since cannot divide by 0
         if (uniqueCustomers != 0) {
-            avg = totalsales / uniqueCustomers;
+            avg = (double)totalsales / uniqueCustomers;
         }
-        return Math.round(avg * 100) / 100; // 2 decimals
+        return Math.round(avg * 100.0) / 100.0; // convert to 2 decimals
     }
     
  
@@ -90,9 +91,9 @@ public class SupplierSummary {
         
         // handles totalsales cannot be zero since cannot divide by 0
         if (totalsales != 0) {
-            top5SalesScore = top5TotalSales / totalsales * 100; // percentage
+            top5SalesScore = top5TotalSales / (double) totalsales * 100; // percentage
         }
         
-        return Math.round(top5SalesScore * 100) /100; // 2 decimals
+        return Math.round(top5SalesScore * 100.0) /100.0; // 2 decimals
     }
 }

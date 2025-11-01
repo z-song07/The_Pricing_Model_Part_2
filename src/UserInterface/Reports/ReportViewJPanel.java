@@ -5,6 +5,9 @@
 package UserInterface.Reports;
 
 import TheBusiness.Business.Business;
+import TheBusiness.SalesManagement.SalesPersonProfile;
+import UserInterface.Main.WorkSpaceProfiles.SalesPersonWorkAreaJPanel;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -19,10 +22,12 @@ public class ReportViewJPanel extends javax.swing.JPanel {
      */
     Business business;
     JPanel csp;
-    public ReportViewJPanel(Business business, JPanel csp) {
+    SalesPersonProfile spp;
+    public ReportViewJPanel(Business business, SalesPersonProfile spp, JPanel csp) {
         initComponents();
         this.business = business;
         this.csp = csp;
+        this.spp = spp;
     }
 
     /**
