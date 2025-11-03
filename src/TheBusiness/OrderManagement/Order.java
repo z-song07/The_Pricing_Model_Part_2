@@ -89,7 +89,10 @@ public class Order {
     public SalesPersonProfile getSalesperson() {
         return salesperson;
     }
-    
+
+    public ArrayList<OrderItem> getOrderitems() {
+        return orderitems;
+    }
     
 public void CancelOrder(){
     status = "Cancelled";

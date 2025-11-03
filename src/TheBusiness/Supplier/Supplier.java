@@ -17,10 +17,10 @@ import TheBusiness.ProductManagement.ProductsReport;
 public class Supplier {
     String name;
     ProductCatalog productcatalog;
-   ProductsReport productsreport;
+    ProductsReport productsreport;
     public Supplier(String n){
         name = n;
-        productcatalog = new ProductCatalog(name, "software"); // pass the supplier      
+        productcatalog = new ProductCatalog(this, "software"); // pass the supplier      
     }
     
     public ProductsReport prepareProductsReport(){

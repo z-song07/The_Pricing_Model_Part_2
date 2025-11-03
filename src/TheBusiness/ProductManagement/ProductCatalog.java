@@ -19,7 +19,7 @@ public class ProductCatalog {
 
     String type;
     ArrayList<Product> products; //list of products initially empty
-    String supplierName;
+    Supplier supplier;
     Set<CustomerProfile> uniquecustomers;
 //    public ProductCatalog(String n) {
 //        type = n;
@@ -32,10 +32,10 @@ public class ProductCatalog {
 //    }
     
     // pass in the supplier
-    public ProductCatalog(String s,String t) {
+    public ProductCatalog(Supplier s,String t) {
         type = t;
         products = new ArrayList();  ///create the list of elements otherwise it is null
-        supplierName = s;
+        supplier = s;
         uniquecustomers = new HashSet<>();
         
     }
@@ -43,17 +43,16 @@ public class ProductCatalog {
     public ProductCatalog(String s) {
         type = "unknown";
         products = new ArrayList();  ///create the list of elements otherwise it is null
-        supplierName = s;
         uniquecustomers = new HashSet<>();
     }
     
     public Product newProduct(int fp, int cp, int tp) {
-        Product p = new Product(supplierName, fp, cp, tp);
+        Product p = new Product(supplier, fp, cp, tp);
         products.add(p);
         return p;
     }
     public Product newProduct(String n, int fp, int cp, int tp) {
-        Product p = new Product(supplierName, n,fp, cp, tp);
+        Product p = new Product(supplier, n,fp, cp, tp);
         products.add(p);
         return p;
     }
@@ -77,11 +76,11 @@ public class ProductCatalog {
         this.products = products;
     }
     
-    public Set<CustomerProfile> getUniqueCustomers() {
-        for (Product p: products) {
-            uniquecustomers.addAll(p.getUniqueCustomers());
-        }
-        
-        return uniquecustomers;
-    }
+//    public Set<CustomerProfile> getUniqueCustomers() {
+//        for (Product p: products) {
+//            uniquecustomers.addAll(p.getUniqueCustomers());
+//        }
+//        
+//        return uniquecustomers;
+//    }
 }

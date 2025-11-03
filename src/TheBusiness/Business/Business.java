@@ -160,7 +160,7 @@ public class Business {
             masterProductList.addAll(currentProductCatalog.getProductList());
         }
     
-        ProductCatalog masterProductCatalog = new ProductCatalog("MasterProductList", "All Product");
+        ProductCatalog masterProductCatalog = new ProductCatalog("All Product");
         masterProductCatalog.setProducts(masterProductList);
         return masterProductCatalog;
     }

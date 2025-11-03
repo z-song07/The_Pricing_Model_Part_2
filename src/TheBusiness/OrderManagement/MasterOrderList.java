@@ -43,7 +43,7 @@ public class MasterOrderList {
         
     return masterorderreport;
         
-}
+    }
 
 public int getSalesVolume(){
 
@@ -52,6 +52,10 @@ for(Order order: orders){
     sum = sum + order.getOrderTotal();
 }
 return sum;
+    }
+
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
 
 }

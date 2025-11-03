@@ -8,8 +8,11 @@ package TheBusiness.CustomerManagement;
 import java.util.ArrayList;
 import TheBusiness.MarketModel.Market;
 import TheBusiness.OrderManagement.Order;
+import TheBusiness.OrderManagement.OrderItem;
 import TheBusiness.Personnel.Person;
 import TheBusiness.Personnel.Profile;
+import TheBusiness.ProductManagement.Product;
+import TheBusiness.Supplier.Supplier;
 
 /**
  *
@@ -90,6 +93,25 @@ public class CustomerProfile extends Profile {
 
     public Person getPerson() {
         return person;
+    }
+    
+    // calculate how much spend for a supplier
+    public int getTotalSpentOfSupplier(Supplier selectedSupplier) {
+        int totalSpent = 0;
+        
+        for (Order o: orders) {
+            for (OrderItem oi: o.getOrderitems()) {
+                Product product = oi.getSelectedProduct();
+                Supplier productSupplier = product.getSupplier();
+                
+                if (productSupplier.equals(selectedSupplier)) {
+                    totalSpent += oi.getOrderItemTotal();
+                }
+                
+            }
+        
+        }
+        return totalSpent;
     }
 
     @Override

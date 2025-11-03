@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package TheBusiness.Supplier;
+import TheBusiness.Business.Business;
 import java.util.ArrayList;
 
 /**
@@ -34,10 +35,10 @@ public class SupplierDirectory {
         return suppliers;
     }
     
-    public SuppliersReport generateSupplierPerformanceReport() {
+    public SuppliersReport generateSupplierPerformanceReport(Business b) {
         SuppliersReport suppliersReport = new SuppliersReport();
         for(Supplier s: suppliers) {
-            SupplierSummary ss = new SupplierSummary(s);
+            SupplierSummary ss = new SupplierSummary(s,b);
             suppliersReport.addSupplierSummary(ss);
         }
         

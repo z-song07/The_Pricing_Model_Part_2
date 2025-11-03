@@ -22,12 +22,12 @@ public class Product {
     private int ceilingPrice;
     private int targetPrice;
     ArrayList<OrderItem> orderitems;
-    private String supplierName;
+    Supplier supplier;
     //ArrayList<CustomerProfile> uniquecustomers;
     Set<CustomerProfile> uniquecustomers;
     
-    public Product(String s, int fp, int cp, int tp) {
-        supplierName = s;
+    public Product(Supplier s, int fp, int cp, int tp) {
+        supplier = s;
         floorPrice = fp;
         ceilingPrice = cp;
         targetPrice = tp;
@@ -37,8 +37,8 @@ public class Product {
         uniquecustomers = new HashSet<>(); // only stores unique values
         
     }
-    public Product(String s, String n, int fp, int cp, int tp) {
-        supplierName =s;
+    public Product(Supplier s, String n, int fp, int cp, int tp) {
+        supplier =s;
         name = n;
         floorPrice = fp;
         ceilingPrice = cp;
@@ -138,9 +138,12 @@ public class Product {
         return ceilingPrice;
     }
 
-    public String getSupplierName() {
-        return supplierName;
+    public Supplier getSupplier() {
+        return supplier;
     }
+    public String getSupplierName() {
+        return supplier.getName();
+}
 
     @Override
     public String toString(){

@@ -123,7 +123,7 @@ public class SuppliersReportJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         SupplierDirectory supplierDirectory = b.getSupplierDirectory();
-        SuppliersReport suppliersReport = supplierDirectory.generateSupplierPerformanceReport();
+        SuppliersReport suppliersReport = supplierDirectory.generateSupplierPerformanceReport(b);
         ArrayList<SupplierSummary> supplierSummaryList = suppliersReport.getSuppliersummarylist();
         
         for (SupplierSummary ss : supplierSummaryList) {
